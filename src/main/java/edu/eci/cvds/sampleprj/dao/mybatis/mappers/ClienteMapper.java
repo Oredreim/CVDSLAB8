@@ -6,13 +6,10 @@ import org.apache.ibatis.annotations.Param;
 
 import edu.eci.cvds.samples.entities.Cliente;
 
-/**
- *
- * @author 2106913
- */
+
 public interface ClienteMapper {
-    
-    public Cliente consultarCliente(int id); 
+
+    public Cliente consultarCliente(@Param("id_cliente") long id);
     
     /**
      * Registrar un nuevo item rentado asociado al cliente identificado
@@ -22,15 +19,16 @@ public interface ClienteMapper {
      * @param fechainicio
      * @param fechafin 
      */
-    public void agregarItemRentadoACliente(int id, 
-            int idit, 
-            Date fechainicio,
-            Date fechafin);
+	public void agregarItemRentadoACliente(@Param("id_cliente") int idC,
+            @Param("id_item") int idit, @Param("fechainiciorenta") Date fechainicio, @Param("fechafinrenta") Date fechafin);
 
     /**
      * Consultar todos los clientes
      * @return 
      */
     public List<Cliente> consultarClientes();
+
+	public void actualizarClienteVetado(@Param("id_cliente") long docu,@Param("estado") boolean estado);;
     
+	public void insertarCliente(@Param("cliente") Cliente c);
 }
