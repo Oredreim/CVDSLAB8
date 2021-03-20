@@ -70,13 +70,7 @@ public class MyBatisExample {
         
         
         sqlss.commit();
-        
-        
+
         sqlss.close();
-
-        
-        
     }
-
-
 }

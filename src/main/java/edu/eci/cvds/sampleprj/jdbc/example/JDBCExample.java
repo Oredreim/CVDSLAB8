@@ -67,8 +67,6 @@ public class JDBCExample {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(JDBCExample.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }
 
     /**
@@ -118,7 +116,6 @@ public class JDBCExample {
         return np;
     }
 
-
     /**
      * Calcular el costo total de un pedido
      * @param con
@@ -142,9 +139,4 @@ public class JDBCExample {
         }
         return costoTotal;
     }
-
-
-
-
-
 }
